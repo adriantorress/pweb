@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Virtual</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id = "title-and-subtitle">
+        <h1>Escola Virtual</h1>
+    </div>
+    <form method="post" action="#">
+        <div id = "personal-data">
+            <h2>Formulário de Pré-Matrícula</h2>
+            <br id="h2-br">
+            <h3>Dados Pessoais:</h3>
+            <div>
+            <label for="name">Nome do Aluno:</label>
+            <input class= "input" type="text" id="name" name="name"><br>
+            </div>
+            <div>
+            <label for="birth">Data de Nascimento:</label>
+            <input class= "input" type="date" id="birth" name="birth"><br>
+            </div>
+            <div>
+            <label for="mname">Nome da Mãe:</label>
+            <input class= "input" type="text" id="mname" name="mname"><br>
+            </div>
+            <div>
+            <label for="fname">Nome do Pai:</label>
+            <input class= "input" type="text" id="fname" name="fname"><br>
+            </div>
+            <div id = 'telefone'></div>
+                    <label for="dddl">Telefone:</label>
+                    <div class="internal-telefone">
+                        <div class="telefone">
+                            <label for="ddd" id = dddl>DDD:</label>
+                            <input class="input-phone" type="text" id="ddd" name="ddd">
+                        </div>
+                        <div class="telefone">
+                            <label for="number">Número:</label>
+                            <input class="input-phone" type="text" id="number" name="number">
+                        </div>
+                        <div class="telefone">
+                            <label for="extension">Ramal:</label>
+                            <input class="input-phone" type="text" id="extension" name="extension"><br>
+                        </div>
+                    </div>
+            <label for="email">E-Mail:</label>
+            <input class= "input" type="text" id="email" name="email"><br>
+
+        </div>
+        <br>
+        <div id = "enrollment-information">
+            <h3>Informações de Matricula:</h3>
+            <label for="serie">Série:</label>
+            <select id="serie" name="serie">
+                <option value="pre-escolar">Pré-Escolar</option>
+                <option value="fundamental-1">Ensino Fundamental - 1</option>
+                <option value="fundamental-2">Ensino Fundamental - 2</option>
+                <option value="medio">Ensino Médio</option>
+                <option value="tecnico">Ensino Técnico</option>
+                <option value="superior">Ensino Superior</option>
+            </select><br><br>
+
+            <label>Turno:</label><br>
+
+            <div class = "check-button">
+
+            <div>
+            <input type="radio" id="morning" name="session" value="morning">
+            <label for="informatica">Manhã</label>
+            </div>
+
+            <div>
+            <input type="radio" id="afternoon" name="session" value="afternoon">
+            <label for="afternoon">Tarde</label>
+            </div>
+            </div>
+
+            <label>Atividades Extracurriculares:</label><br>
+            <div class = "check2">
+            <div >
+            <input type="checkbox" id="informatica" name="activities" value="informatica">
+            <label for="informatica">Informática</label>
+            </div>
+            <div>
+            <input type="checkbox" id="musica" name="activities" value="musica">
+            <label for="musica">Música</label>
+            </div>
+            <div>
+                <input type="checkbox" id="balet" name="activities" value="balet">
+                <label for="balet">Balet</label>
+            </div>
+            <div>
+                <input type="checkbox" id="pintura" name="activities" value="pintura">
+                <label for="pintura">Pintura</label>
+            </div>
+            <div>
+                <input type="checkbox" id="judo" name="activities" value="judo">
+                <label for="judo">Judô</label>
+            </div>
+            <div>
+            <input type="checkbox" id="futebol" name="activities" value="futebol">
+            <label for="futebol">Futebol</label>
+            </div>
+            </div>
+            <br><br>
+        </div>
+
+        <input type="submit" value="Enviar Formulário"> 
+        <input type="submit" value="Limpar Campos">
+    </form>
+</body>
+</html>
