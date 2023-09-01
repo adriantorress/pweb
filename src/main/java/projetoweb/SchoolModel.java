@@ -27,22 +27,15 @@ public class SchoolModel {
   @Size(min =3, max = 50)
   private String nome;
 
-  @NotNull
-  @DateTimeFormat(pattern = "yyyy-mm-dd")
-  @Past
   public LocalDate data_nascimento;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  private String nome_da_mae;
+ 
+  private String nomedamae;
 
-  @NotBlank
-  @Size(min = 3, max = 50)
-  private String nome_do_pai;
+  private String nomedopai;
 
-  @NotBlank
-  @Size(max = 2, min = 2)
-  private String ddd;
+  @NotNull
+  private Integer ddd;
 
   @NotNull
   private Integer numero;
@@ -77,31 +70,31 @@ public class SchoolModel {
     this.nome = nome;
   }
 
-  public LocalDate getData_nascimento() {
+  public LocalDate getDataNascimento() {
     return data_nascimento;
   }
-  public void setData_nascimento(LocalDate data_nascimento) {
+  public void setDataNascimento(LocalDate data_nascimento) {
     this.data_nascimento = data_nascimento;
   }
 
-  public String getNome_mae() {
-    return nome_da_mae;
+  public String getNomeDaMae() {
+    return nomedamae;
   }
-  public void setNome_mae(String nome_da_mae) {
-    this.nome_da_mae = nome_da_mae;
-  }
-
-  public String getNome_pai() {
-    return nome_do_pai;
-  }
-  public void setNome_pai(String nome_do_pai) {
-    this.nome_do_pai = nome_do_pai;
+  public void setNomeDaMae(String nomedamae) {
+    this.nomedamae = nomedamae;
   }
 
-  public String getDdd() {
+  public String getNomeDoPai() {
+    return nomedopai;
+  }
+  public void setNomeDoPai(String nomedopai) {
+    this.nomedopai = nomedopai;
+  }
+
+  public Integer getDdd() {
     return ddd;
   }
-  public void setDdd(String ddd) {
+  public void setDdd(Integer ddd) {
     this.ddd = ddd;
   }
 
