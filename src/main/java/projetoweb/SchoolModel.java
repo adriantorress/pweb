@@ -1,8 +1,6 @@
 package projetoweb;
+
 import java.time.LocalDate;
-
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,16 +21,18 @@ public class SchoolModel {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
-  @NotBlank(message = "Campo Obrigatório")
-  @Size(min =3, max = 50)
+  @NotBlank(message = "O campo não pode estar em branco")
   private String nome;
 
-  public LocalDate data_nascimento;
+  @NotNull(message = "A data não pode estar em branco")
+  @Past(message = "A data deve estar no passado")
+  public LocalDate dataNascimento;
 
- 
-  private String nomedamae;
+  @NotBlank(message = "O campo não pode estar em branco")
+  private String nomeDaMae;
 
-  private String nomedopai;
+  @NotBlank(message = "O campo não pode estar em branco")
+  private String nomeDoPai;
 
   @NotNull
   private Integer ddd;
@@ -43,22 +43,23 @@ public class SchoolModel {
   @NotNull
   private Integer ramal;
 
-  @NotEmpty
-  @Email
+  @NotEmpty(message = "O campo não pode estar em branco")
+  @Email(message = "Informe um email válido.")
   private String email;
 
+  @NotEmpty(message = "O campo não pode estar em branco.")
   private String serie;
 
-  @NotBlank
+  @NotBlank(message = "O campo não pode estar em branco.")
   private String turno;
 
-  @Size(max = 3)
+  @Size(max = 3, message = "Selecione no máximo 3 atividades.")
   public String[] atividades;
 
-  
   public Integer getId() {
     return id;
   }
+
   public void setId(Integer id) {
     this.id = id;
   }
@@ -66,34 +67,39 @@ public class SchoolModel {
   public String getNome() {
     return nome;
   }
+
   public void setNome(String nome) {
     this.nome = nome;
   }
 
   public LocalDate getDataNascimento() {
-    return data_nascimento;
+    return dataNascimento;
   }
-  public void setDataNascimento(LocalDate data_nascimento) {
-    this.data_nascimento = data_nascimento;
+
+  public void setDataNascimento(LocalDate dataNascimento) {
+    this.dataNascimento = dataNascimento;
   }
 
   public String getNomeDaMae() {
-    return nomedamae;
+    return nomeDaMae;
   }
-  public void setNomeDaMae(String nomedamae) {
-    this.nomedamae = nomedamae;
+
+  public void setNomeDaMae(String nomeDaMae) {
+    this.nomeDaMae = nomeDaMae;
   }
 
   public String getNomeDoPai() {
-    return nomedopai;
+    return nomeDoPai;
   }
-  public void setNomeDoPai(String nomedopai) {
-    this.nomedopai = nomedopai;
+
+  public void setNomeDoPai(String nomeDoPai) {
+    this.nomeDoPai = nomeDoPai;
   }
 
   public Integer getDdd() {
     return ddd;
   }
+
   public void setDdd(Integer ddd) {
     this.ddd = ddd;
   }
@@ -101,6 +107,7 @@ public class SchoolModel {
   public Integer getNumero() {
     return numero;
   }
+
   public void setNumero(Integer numero) {
     this.numero = numero;
   }
@@ -108,6 +115,7 @@ public class SchoolModel {
   public Integer getRamal() {
     return ramal;
   }
+
   public void setRamal(Integer ramal) {
     this.ramal = ramal;
   }
@@ -115,6 +123,7 @@ public class SchoolModel {
   public String getEmail() {
     return email;
   }
+
   public void setEmail(String email) {
     this.email = email;
   }
@@ -122,6 +131,7 @@ public class SchoolModel {
   public String getSerie() {
     return serie;
   }
+
   public void setSerie(String serie) {
     this.serie = serie;
   }
@@ -129,6 +139,7 @@ public class SchoolModel {
   public String getTurno() {
     return turno;
   }
+
   public void setTurno(String turno) {
     this.turno = turno;
   }
@@ -136,6 +147,7 @@ public class SchoolModel {
   public String[] getAtividades() {
     return atividades;
   }
+
   public void setAtividades(String[] atividades) {
     this.atividades = atividades;
   }

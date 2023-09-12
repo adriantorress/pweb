@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div id="title-and-subtitle">
+    <h1>Escola Virtual</h1>
+  </div>
+  <nav>
+    <a href="/" class="nav-button">Home</a>
+    <a href="/students" class="nav-button active">Alunos</a>
+  </nav>
+  <h2 id="studenth2">Alunos Cadastrados</h2>
+
+  <table class="fixed-header-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Telefone</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="student : ${students}">
+        <td th:text="${student.nome}"></td>
+        <td th:text="${student.dataNascimento}"></td>
+        <td th:text="${student.ddd + ' ' + student.numero}"></td>
+        <td th:text="${student.email}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
