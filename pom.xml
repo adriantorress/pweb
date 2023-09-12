@@ -99,6 +99,35 @@
 		            </deployment>
 		        </configuration>
 		    </plugin>
+		    <plugin>
+		        <groupId>com.microsoft.azure</groupId>
+		        <artifactId>azure-spring-apps-maven-plugin</artifactId>
+		        <version>1.18.0</version>
+		        <configuration>
+		            <subscriptionId>681464e0-63a1-4296-a63b-c25618a26c51</subscriptionId>
+		            <resourceGroup>DefaultResourceGroup-CQ</resourceGroup>
+		            <clusterName>projetoweb</clusterName>
+		            <appName>projetoweb</appName>
+		            <isPublic>true</isPublic>
+		            <deployment>
+		                <cpu>1</cpu>
+		                <memoryInGB>2</memoryInGB>
+		                <instanceCount>1</instanceCount>
+		                <runtimeVersion>Java 17</runtimeVersion>
+		                <resources>
+		                    <resource>
+		                        <filtering/>
+		                        <mergeId/>
+		                        <targetPath/>
+		                        <directory>${project.basedir}/target</directory>
+		                        <includes>
+		                            <include>*.jar</include>
+		                        </includes>
+		                    </resource>
+		                </resources>
+		            </deployment>
+		        </configuration>
+		    </plugin>
 		</plugins>
 	</build>
 
